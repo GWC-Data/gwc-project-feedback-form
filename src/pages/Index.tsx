@@ -745,7 +745,7 @@ export default function Index() {
           }}
         >
           <h3 className="text-[20px] font-bold text-gray-800 mb-1">
-            Domain-Specific Feedback (Optional)
+            Domain-Specific Feedback
           </h3>
           <p className="text-sm text-gray-500 mb-4">Please answer the sections relevant to the work we did (e.g., dashboards or application development). If something doesn’t apply, you may skip it.</p>
 
