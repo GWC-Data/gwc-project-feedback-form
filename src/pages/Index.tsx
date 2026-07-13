@@ -33,9 +33,8 @@ interface FormErrors {
 }
 
 export default function Index() {
-  const SUPABASE_URL = "https://vceovxoqshphgjudzdvj.supabase.co";
-  const SUPABASE_KEY =
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZjZW92eG9xc2hwaGdqdWR6ZHZqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMzNjc0MTAsImV4cCI6MjA3ODk0MzQxMH0.zkcYxIBNNzEh4vsEV1hVUNJHlSWVJDU169rs6XWCKDQ";
+  const SUPABASE_URL = "https://ppnkxalvbgxvpveylbfu.supabase.co";
+  const SUPABASE_KEY = "sb_publishable_S2c4D8LrXNhZ_68AtRZJLA_E3_QTX3f";
 
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>({
