@@ -10,8 +10,8 @@ const __dirname = path.dirname(__filename);
  
 const config = {
   host: "145.79.210.13",
-  user: "u927690231.vishwanath",
-  password: "Gwc@2025@123098",
+  user: "u927690231.projectfeedbacks",
+  password: "CNs#I@390zrz",
   secure: false,
 };
  
