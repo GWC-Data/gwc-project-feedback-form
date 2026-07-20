@@ -3,6 +3,7 @@ import backgroundImage from "../assets/bg3.png";
 import logo from "../assets/logo.svg";
 import backgroundMainImage from "../assets/freepik__talk__90356.jpeg";
 import { Loader2 } from "lucide-react";
+import { toast } from "sonner";
 
 interface FormData {
   client_name: string;
@@ -33,9 +34,6 @@ interface FormErrors {
 }
 
 export default function Index() {
-  const SUPABASE_URL = "https://ppnkxalvbgxvpveylbfu.supabase.co";
-  const SUPABASE_KEY = "sb_publishable_S2c4D8LrXNhZ_68AtRZJLA_E3_QTX3f";
-
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState<FormData>({
     client_name: "",
@@ -123,6 +121,13 @@ export default function Index() {
 
   const handleSubmit = async () => {
     if (!validateForm()) {
+      toast.error("Please verify the form and fill in all required fields.", {
+        classNames: {
+          toast: "!bg-red-600 !text-white !border-red-600",
+          description: "!text-white",
+          title: "!text-white",
+        },
+      });
       const firstErrorField = document.querySelector(".border-red-400");
       if (firstErrorField) {
         firstErrorField.scrollIntoView({ behavior: "smooth", block: "center" });
@@ -141,13 +146,10 @@ export default function Index() {
     };
 
     try {
-      const response = await fetch(`${SUPABASE_URL}/rest/v1/client_feedback`, {
+      const response = await fetch(`https://gwc-project-feedback-form-api-462434048008.asia-south1.run.app/api/feedback`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          apikey: SUPABASE_KEY,
-          Authorization: `Bearer ${SUPABASE_KEY}`,
-          Prefer: "return=minimal", // faster insert
         },
         body: JSON.stringify(payload),
       });
